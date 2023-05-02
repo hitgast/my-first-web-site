@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>로그인</title>
+        <style>
+            html{
+                background-image: url(../img/BG_nature01.jpg);
+                background-size: 600px;
+            }
+            #title01{
+                color: darkblue;     /*속성*/
+                text-decoration: none;
+            }
+            .public01{
+                text-align: center;
+            }
+            #imgDiv01{
+                margin-top: 100px;
+                border: 1px;
+                background-color: beige;
+            }
+            img{
+                width: 260px;
+                height: 347px;
+                margin-left: 40px;
+            }
+            #id_text{
+                width: 300px;
+                height: 40px;
+                font-size: 18px;
+                border-radius: 5px;
+            }
+            #id_div{
+                margin-top: 100px;
+                padding-bottom: 7px;
+            }
+            #pw_text{
+                width: 300px;
+                height: 40px;
+                font-size: 18px;
+                border-radius: 5px;
+            }
+            #login_but{
+                width: 307.2px;
+                height: 50px;
+                border-radius: 5px;
+                font-size: 18px;
+                color: aliceblue;
+                background-color: darkblue;
+                cursor: pointer;
+            }
+            #login_But_div{
+                padding-top: 20px;
+            }
+            @media(max-width:965px){
+                #imgDiv01{
+                    width: 965px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="public01">
+            <div class="public01">
+                <h1>
+                    <a href = "index.html" target="_self" title="+보바 도감"
+                    id="title01">슈슈슉 도감</a>
+                </h1>
+            </div>
+            <div id="id_div">
+                <input type="text" id="id_text" placeholder="아이디">
+            </div>
+            <div>
+                <input type="password" id="pw_text" placeholder="비밀번호">
+            </div>
+            <div id="login_But_div">
+                <button id="login_but" type="button">로그인</button>
+            </div>
+            <div class="public01" id="imgDiv01">
+                <img src="../img/puppy01.jpg">
+                <img src="../img/puppy02.jpg">
+                <img src="../img/puppy03.jpg">
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+html{
+    background-image: url(img/BG_nature01.jpg);
+    background-size: 600px;
+}
+#title01{
+    color: darkblue;     /*속성*/
+    text-decoration: none;
+}
+.public01{
+    text-align: center;
+}  
+#menu01{
+    width: 600px;
+    margin: auto;
+    border: 4px solid black;
+    border-radius: 10px;
+    padding: 10px 0px;
+}
+#menu01 a{
+    font-size: 20px;
+    padding-left: 8px;
+    color: cornflowerblue;
+    text-decoration: none;
+}
+.padMenu{
+    border-right: 2px solid darkblue;
+    padding-right: 15px;
+}
+#con01{
+    width: 500px;
+    margin: auto;
+    margin-top: 50px;
+}
+#secondTitle{
+    border-bottom: 1px solid black;
+    width: 600px;
+    margin: auto;
+}
