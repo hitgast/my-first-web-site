@@ -5,8 +5,8 @@
         <title>로그인</title>
         <style>
             html{
-                background-image: url(img/BG_nature01.jpg);
-                background-size: 600px;
+                background-image: url(https://images.unsplash.com/photo-1682552954728-bebadc9b9030?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+                background-size: cover;
             }
             #title01{
                 color: darkblue;     /*속성*/
@@ -18,7 +18,7 @@
             #imgDiv01{
                 margin-top: 100px;
                 border: 1px;
-                background-color: beige;
+                background-color: rgb(176, 196, 222, .6);
             }
             img{
                 width: 260px;
@@ -53,6 +53,20 @@
             #login_But_div{
                 padding-top: 20px;
             }
+            #join_find_div{
+                padding-top: 15px;
+            }
+            #join_find_div a{
+                font-size: 13px;
+                font-weight: bold;
+                padding: 0px 10px;
+                text-decoration: none;
+                color: black;
+            }
+            #fint_id{
+                border-left: 2px solid rgb(128, 128, 128, .5);
+                border-right: 2px solid rgb(128, 128, 128, .5);
+            }
             @media(max-width:965px){
                 #imgDiv01{
                     width: 965px;
@@ -77,10 +91,15 @@
             <div id="login_But_div">
                 <button id="login_but" type="button">로그인</button>
             </div>
+            <div id="join_find_div">
+                <a href="join.html">회원가입 </a>
+                <a id="fint_id">아이디 찾기 </a>
+                <a>비밀번호 찾기</a>
+            </div>
             <div class="public01" id="imgDiv01">
-                <img src="img/puppy01.jpg">
-                <img src="img/puppy02.jpg">
-                <img src="img/puppy03.jpg">
+                <img src="../img/puppy01.jpg">
+                <img src="../img/puppy02.jpg">
+                <img src="../img/puppy03.jpg">
             </div>
         </div>
     </body>

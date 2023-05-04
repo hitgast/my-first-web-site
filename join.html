@@ -3,8 +3,112 @@
     <head>
         <meta charset="UTF-8">
         <title>로그인</title>
+        <style>
+            html{
+                background-image: url(../img/BG_nature01.jpg);
+                background-size: 600px;
+            }
+            #title01{
+                color: darkblue;     /*속성*/
+                text-decoration: none;
+            }
+            .public01{
+                text-align: center;
+            }
+            #month_sel{
+                width: 80px;
+                height: 30px;
+                padding-left: 5px;
+            }
+            #email_sel{
+                width: 100px;
+                height: 30px;
+                padding-left: 5px;
+            }
+            h5{
+                display: inline;
+            }
+            div{
+                border: 2px solid blue;
+            }
+            #grid_div{
+                display: grid;
+            }
+        </style>
     </head>
     <body>
-        
+        <div class="public01">
+            <h1>
+                <a href = "index.html" target="_self" title="+보바 도감"
+                id="title01">슈슈슉 도감</a>
+            </h1>
+            <div id="grid_div">
+                <div>
+                    <h5>아이디</h5>
+                </div>
+                <div>
+                    <input type="text" maxlength="20">
+                </div>
+                <div>
+                    <h5>비밀번호</h5>
+                </div>
+                <div>
+                    <input type="password">
+                </div>
+                <div>
+                    <h5>비밀번호 확인</h5>
+                </div>
+                <div>
+                    <input type="password">
+                </div>
+                <div>
+                    <h5>이름</h5>
+                </div>
+                <div>
+                    <input type="text">
+                </div>
+                <div>
+                    <h5>생년월일</h5>
+                </div>
+                <div>
+                    <input type="text" placeholder="년(4글자)" maxlength="4">
+                    <select name="" id="month_sel">
+                        <option>월</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                    </select>
+                    <input type="text" placeholder="일" maxlength="2">
+                </div>
+                <div>
+                    <h5>이메일</h5>
+                </div>
+                <div>
+                    <input type="text"> @ <input type="text">
+                    <select name="" id="email_sel">
+                        <option>직접 입력</option>
+                        <option>naver.com</option>
+                        <option>gmail.com</option>
+                        <option>daum.com</option>
+                        <option>nate.com</option>
+                    </select>
+                </div>
+                <div>
+                    <h5>휴대전화</h5>
+                </div>
+                <div>
+                    <input type="text">
+                </div>
+            </div>
+        </div>
     </body>
 </html>

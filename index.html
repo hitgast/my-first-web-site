@@ -5,8 +5,8 @@
         <title>슈슈슉 도감</title>
         <style>
             html{
-                background-image: url(img/BG_nature01.jpg);
-                background-size: 600px;
+                background-image: url(../img/BG_nature01.jpg);
+                background-size: 800px;
             }
             #title01{
                 color: darkblue;     /*속성*/
@@ -35,26 +35,55 @@
             #imgDiv01{
                 margin-top: 100px;
                 border: 1px;
-                background-color: beige;
+                background-color: rgb(245, 245, 220, .5);
             }
             img{
                 width: 260px;
                 height: 347px;
                 margin-left: 40px;
             }
+            #login_div a{
+                font-weight: bold;
+                text-decoration: none;
+                color: black;
+                font-size: 14px;
+            }
             #login01{
                 position: absolute;
                 top: 10px;
                 right: 135px;
-                font-size: 15px;
-                padding-right: 8px;
-                border-right: 1px solid black;
+                padding-right: 10px;
+                border-right: 2px solid rgb(0, 0, 0, .4);
             }
             #join01{
                 position: absolute;
                 top: 10px;
-                right: 70px;
-                font-size: 15px;
+                right: 68px;
+            }
+            #white_but{
+                display: none;
+                position: absolute;
+                top: 10px;
+                left: 20px;
+                width: 55px;
+                height: 30px;
+                border-radius: 30px;
+                font-weight: bold;
+                background-color: yellowgreen;
+                color: aliceblue;
+                cursor: pointer;
+            }
+            #dark_but{
+                position: absolute;
+                top: 10px;
+                left: 20px;
+                width: 55px;
+                height: 30px;
+                border-radius: 30px;
+                font-weight: bold;
+                background-color: yellowgreen;
+                color: aliceblue;
+                cursor: pointer;
             }
             @media(max-width:965px){
                 #imgDiv01{
@@ -78,6 +107,30 @@
                     <a href="join.html" id="join01">회원가입</a>
                 </div>
             </div>
+            <div>
+                <input type="button" id="dark_but" value="Dark" onclick="
+                    document.querySelector('html').style.backgroundImage='url(../img/BG_dark02.jpg)';
+                    document.getElementById('menu01').style.borderColor='darkblue';
+                    document.querySelector('body').style.color='beige';
+                    document.getElementById('login01').style.color='beige';
+                    document.getElementById('join01').style.color='beige';
+                    document.getElementById('imgDiv01').style.backgroundColor='rgb(128, 128, 128, .5)';
+                    document.getElementById('login01').style.borderRightColor='beige';
+                    document.getElementById('dark_but').style.display='none';
+                    document.getElementById('white_but').style.display='inline';
+                    ">
+                <input type="button" id="white_but" value="White" onclick="
+                    document.querySelector('html').style.backgroundImage='url(../img/BG_nature01.jpg)';
+                    document.getElementById('menu01').style.borderColor='black';
+                    document.querySelector('body').style.color='darkblue';
+                    document.getElementById('login01').style.color='black';
+                    document.getElementById('join01').style.color='black';
+                    document.getElementById('imgDiv01').style.backgroundColor='rgb(245, 245, 220, .5)';
+                    document.getElementById('login01').style.borderRightColor='rgb(0, 0, 0, .4)';
+                    document.getElementById('dark_but').style.display='inline';
+                    document.getElementById('white_but').style.display='none';
+                    ">
+            </div>
             
             <div class="public01" id="menu01">
                 <a href="1_2.html" class="padMenu">컬러</a>
@@ -88,9 +141,9 @@
                 <h2>오서오시게</h2>
             </div>
             <div class="public01" id="imgDiv01">
-                <img src="img/puppy01.jpg">
-                <img src="img/puppy02.jpg">
-                <img src="img/puppy03.jpg">
+                <img src="../img/puppy01.jpg">
+                <img src="../img/puppy02.jpg">
+                <img src="../img/puppy03.jpg">
             </div>
         </div>
     </body>
