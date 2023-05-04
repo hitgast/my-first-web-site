@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>로그인</title>
+        <title>회원가입</title>
         <style>
             html{
                 background-image: url(img/BG_nature01.jpg);
@@ -56,7 +56,7 @@
             #grid_div h5, input{
                 margin-top: 8px;
             }
-            #hidden_id_div{
+            #hidden_id_span, #hidden_pw_span, #hidden_pwCheck_span{
                display: none;
             }
 
@@ -76,7 +76,7 @@
                     <input type="text" id="id_text" class="input_text"
                      maxlength="20" onchange="id_input()">
                     <input type="button" value="중복 검사">
-                    <span id="hidden_id_div">
+                    <span id="hidden_id_span">
                         아이디를 6~18자 이내로 입력하세요.
                     </span>
                 </div>
@@ -84,13 +84,21 @@
                     <h5>비밀번호</h5>
                 </div>
                 <div>
-                    <input type="password" class="input_text">
+                    <input type="password" id="pw_text" class="input_text"
+                     onchange="pw_input()">
+                     <span id="hidden_pw_span">
+                        비밀번호가 일치하지 않습니다.
+                    </span>
                 </div>
                 <div>
                     <h5>비밀번호 확인</h5>
                 </div>
                 <div>
-                    <input type="password" class="input_text">
+                    <input type="password" id="pw_check_text" class="input_text"
+                     onchange="pw_check_input()">
+                     <span id="hidden_pwCheck_span">
+                        비밀번호가 일치하지 않습니다.
+                    </span>
                 </div>
                 <div>
                     <h5>이름</h5>
@@ -124,8 +132,9 @@
                     <h5>이메일</h5>
                 </div>
                 <div>
-                    <input type="text" class="input_text"> @ <input type="text" class="input_text">
-                    <select name="" id="email_sel">
+                    <input type="text" id="email01_text" class="input_text">
+                     @ <input type="text" id="email02_text" class="input_text">
+                    <select id="email_sel" onchange="email_sel_input()">
                         <option>직접 입력</option>
                         <option>naver.com</option>
                         <option>gmail.com</option>
@@ -143,11 +152,44 @@
         </div>
         <script>
             function id_input(){
-                var idd = document.getElementById("id_text").value.length;
-                if(idd < 6 || idd > 18){
-                    document.getElementById("hidden_id_div").style.display="block";
+                var id = document.getElementById("id_text").value.length;
+
+                if(id < 6 || id > 18){
+                    document.getElementById("hidden_id_span").style.display="block";
                 }else{
-                    document.getElementById("hidden_id_div").style.display="none";
+                    document.getElementById("hidden_id_span").style.display="none";
+                }
+            }
+            function pw_input() {
+                var pw = document.getElementById("pw_text").value;
+                var pw_check = document.getElementById("pw_check_text").value;
+
+                if(pw != pw_check){
+                    document.getElementById("hidden_pw_span").style.display="block";
+                }else{
+                    document.getElementById("hidden_pw_span").style.display="none";
+                    document.getElementById("hidden_pwCheck_span").style.display="none";
+                }
+            }
+            function pw_check_input() {
+                var pw = document.getElementById("pw_text").value;
+                var pw_check = document.getElementById("pw_check_text").value;
+
+                if(pw != pw_check){
+                    document.getElementById("hidden_pwCheck_span").style.display="block";
+                }else{
+                    document.getElementById("hidden_pw_span").style.display="none";
+                    document.getElementById("hidden_pwCheck_span").style.display="none";
+                }
+            }
+            function email_sel_input() {
+                email_sel = document.getElementById("email_sel").value;
+                
+                if(email_sel == "직접 입력"){
+                    document.getElementById("email02_text").value = "";
+                    document.getElementById("email02_text").focus();
+                }else{
+                    document.getElementById("email02_text").value = email_sel;
                 }
             }
         </script>
