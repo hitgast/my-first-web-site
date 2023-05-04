@@ -37,9 +37,6 @@
                 padding-left: 15px;
                 margin: 0;
             }
-            div{
-                /* border: 2px solid blue; */
-            }
             #grid_div{
                 display: grid;
                 width: 650px;
@@ -59,7 +56,17 @@
             #hidden_id_span, #hidden_pw_span, #hidden_pwCheck_span{
                display: none;
             }
-
+            #join_span{
+                margin: auto;
+            }
+            #join_but{
+                width: 80px;
+                height: 30px;
+                margin-top: 30px;
+                background-color: darkblue;
+                color: aliceblue;
+                border-radius: 5px;
+            }
         </style>
     </head>
     <body>
@@ -75,7 +82,7 @@
                 <div>
                     <input type="text" id="id_text" class="input_text"
                      maxlength="20" onchange="id_input()">
-                    <input type="button" value="중복 검사">
+                    <input type="button" onclick="dupli_check_but()" value="중복 검사">
                     <span id="hidden_id_span">
                         아이디를 6~18자 이내로 입력하세요.
                     </span>
@@ -104,14 +111,15 @@
                     <h5>이름</h5>
                 </div>
                 <div>
-                    <input type="text" class="input_text">
+                    <input type="text" id="name_text" class="input_text">
                 </div>
                 <div>
                     <h5>생년월일</h5>
                 </div>
                 <div>
-                    <input type="text" class="birth_sel" placeholder="년(4글자)" maxlength="4">
-                    <select name="" class="birth_sel" id="month_sel">
+                    <input type="text" id="year_text" class="birth_sel"
+                     placeholder="년(4글자)" maxlength="4">
+                    <select class="birth_sel" id="month_sel">
                         <option>월</option>
                         <option>1</option>
                         <option>2</option>
@@ -126,7 +134,8 @@
                         <option>11</option>
                         <option>12</option>
                     </select>
-                    <input type="text" class="birth_sel" placeholder="일" maxlength="2">
+                    <input type="text" id="day_text" class="birth_sel"
+                     placeholder="일" maxlength="2">
                 </div>
                 <div>
                     <h5>이메일</h5>
@@ -140,15 +149,20 @@
                         <option>gmail.com</option>
                         <option>daum.com</option>
                         <option>nate.com</option>
+                        <option>yahoo.co.kr</option>
+                        <option>Outlook.com</option>
                     </select>
                 </div>
                 <div>
                     <h5>휴대전화</h5>
                 </div>
                 <div>
-                    <input type="text" class="input_text">
+                    <input type="text" id="phone_text" class="input_text">
                 </div>
             </div>
+            <span id="join_span">
+                <input type="submit" id="join_but" onclick="join_input()" value="가입하기">
+            </span>
         </div>
         <script>
             function id_input(){
@@ -191,6 +205,62 @@
                 }else{
                     document.getElementById("email02_text").value = email_sel;
                 }
+            }
+            function join_input() {
+                var idd = document.getElementById("id_text");
+                var pww = document.getElementById("pw_text");
+                var pww_check = document.getElementById("pw_check_text");
+                var namee = document.getElementById("name_text");
+                var yearr = document.getElementById("year_text");
+                var monthh = document.getElementById("month_sel");
+                var dayy = document.getElementById("day_text");
+                var emaill01 = document.getElementById("email01_text");
+                var emaill02 = document.getElementById("email02_text");
+                var phonee = document.getElementById("phone_text");
+
+                if(idd.value == ""){
+                    alert("아이디를 입력 하세요.");
+                    idd.focus();
+                }else if(idd.value.length < 6 || idd.value.length > 18){
+                    alert("아이디를 제대로 입력 하세요.");
+                    idd.focus();
+                }else if(pww.value == ""){
+                    alert("비밀번호를 입력 하세요.");
+                    pww.focus();
+                }else if(pww_check.value == ""){
+                    alert("비밀번호를 입력 하세요.");
+                    pww_check.focus();
+                }else if(pww.value != pww_check.value){
+                    alert("비밀번호를 다시 확인 해주세요.");
+                }else if(namee.value == ""){
+                    alert("이름을 입력 하세요.");
+                    namee.focus();
+                }else if(yearr.value == "" || yearr.value.length < 4){
+                    alert("태어난 년도 4자리를 입력 하세요.");
+                    yearr.focus();
+                }else if(monthh.value == "월"){
+                    alert("태어난 월을 선택 하세요.");
+                    monthh.focus();
+                }
+                else if(dayy.value == ""){
+                    alert("태어난 일을 입력 하세요.");
+                    dayy.focus();
+                }else if(emaill01.value == ""){
+                    alert("이메일을 입력 하세요.");
+                    emaill01.focus();
+                }else if(emaill02.value == ""){
+                    alert("이메일을 입력 하세요.");
+                    emaill02.focus();
+                }
+                else if(phonee.value == ""){
+                    alert("휴대폰 번호를 입력 하세요.");
+                    phonee.focus();
+                }else{
+                    alert("뿡이다");
+                }
+            }
+            function dupli_check_but() {
+                alert("두두두두두 당신은 포위됐다\n두두 항복해라 두두두두두두");
             }
         </script>
     </body>
