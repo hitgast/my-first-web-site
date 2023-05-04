@@ -5,7 +5,7 @@
         <title>로그인</title>
         <style>
             html{
-                background-image: url(img/BG_nature01.jpg);
+                background-image: url(../img/BG_nature01.jpg);
                 background-size: 600px;
             }
             #title01{
@@ -15,10 +15,17 @@
             .public01{
                 text-align: center;
             }
-            #month_sel{
+            .input_text{
+                width: 150px;
+                height: 25px;
+            }
+            .birth_sel{
                 width: 80px;
-                height: 30px;
+                height: 25px;
                 padding-left: 5px;
+            }
+            #month_sel{
+                height: 30.2px;
             }
             #email_sel{
                 width: 100px;
@@ -26,14 +33,33 @@
                 padding-left: 5px;
             }
             h5{
-                display: inline;
+                /* display: inline; */
+                padding-left: 15px;
+                margin: 0;
             }
             div{
-                border: 2px solid blue;
+                /* border: 2px solid blue; */
             }
             #grid_div{
                 display: grid;
+                width: 650px;
+                margin: auto;
+                grid-template-columns: 150px 1fr;
+                grid-template-rows: 62px 62px 62px 62px 62px 62px 62px;
+                text-align: left;
+                margin-top: 120px;
             }
+            #grid_div div{
+                border-bottom: 1px solid gray;
+                
+            }
+            #grid_div h5, input{
+                margin-top: 8px;
+            }
+            #hidden_id_div{
+               display: none;
+            }
+
         </style>
     </head>
     <body>
@@ -47,32 +73,37 @@
                     <h5>아이디</h5>
                 </div>
                 <div>
-                    <input type="text" maxlength="20">
+                    <input type="text" id="id_text" class="input_text"
+                     maxlength="20" onchange="id_input()">
+                    <input type="button" value="중복 검사">
+                    <span id="hidden_id_div">
+                        아이디를 6~18자 이내로 입력하세요.
+                    </span>
                 </div>
                 <div>
                     <h5>비밀번호</h5>
                 </div>
                 <div>
-                    <input type="password">
+                    <input type="password" class="input_text">
                 </div>
                 <div>
                     <h5>비밀번호 확인</h5>
                 </div>
                 <div>
-                    <input type="password">
+                    <input type="password" class="input_text">
                 </div>
                 <div>
                     <h5>이름</h5>
                 </div>
                 <div>
-                    <input type="text">
+                    <input type="text" class="input_text">
                 </div>
                 <div>
                     <h5>생년월일</h5>
                 </div>
                 <div>
-                    <input type="text" placeholder="년(4글자)" maxlength="4">
-                    <select name="" id="month_sel">
+                    <input type="text" class="birth_sel" placeholder="년(4글자)" maxlength="4">
+                    <select name="" class="birth_sel" id="month_sel">
                         <option>월</option>
                         <option>1</option>
                         <option>2</option>
@@ -87,13 +118,13 @@
                         <option>11</option>
                         <option>12</option>
                     </select>
-                    <input type="text" placeholder="일" maxlength="2">
+                    <input type="text" class="birth_sel" placeholder="일" maxlength="2">
                 </div>
                 <div>
                     <h5>이메일</h5>
                 </div>
                 <div>
-                    <input type="text"> @ <input type="text">
+                    <input type="text" class="input_text"> @ <input type="text" class="input_text">
                     <select name="" id="email_sel">
                         <option>직접 입력</option>
                         <option>naver.com</option>
@@ -106,9 +137,19 @@
                     <h5>휴대전화</h5>
                 </div>
                 <div>
-                    <input type="text">
+                    <input type="text" class="input_text">
                 </div>
             </div>
         </div>
+        <script>
+            function id_input(){
+                var idd = document.getElementById("id_text").value.length;
+                if(idd < 6 || idd > 18){
+                    document.getElementById("hidden_id_div").style.display="block";
+                }else{
+                    document.getElementById("hidden_id_div").style.display="none";
+                }
+            }
+        </script>
     </body>
 </html>

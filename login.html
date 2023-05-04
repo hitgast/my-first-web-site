@@ -83,13 +83,13 @@
                 </h1>
             </div>
             <div id="id_div">
-                <input type="text" id="id_text" placeholder="아이디">
+                <input type="text" id="id_text" placeholder="아이디" onchange="id_input()">
             </div>
             <div>
                 <input type="password" id="pw_text" placeholder="비밀번호">
             </div>
             <div id="login_But_div">
-                <button id="login_but" type="button">로그인</button>
+                <button id="login_but" type="button" onclick="login_but()">로그인</button>
             </div>
             <div id="join_find_div">
                 <a href="join.html">회원가입 </a>
@@ -97,10 +97,17 @@
                 <a>비밀번호 찾기</a>
             </div>
             <div class="public01" id="imgDiv01">
-                <img src="img/puppy01.jpg">
-                <img src="img/puppy02.jpg">
-                <img src="img/puppy03.jpg">
+                <img src="../img/puppy01.jpg">
+                <img src="../img/puppy02.jpg">
+                <img src="../img/puppy03.jpg">
             </div>
         </div>
+
+        <script>
+            function login_but() {
+                alert("할루");
+            }
+            
+        </script>
     </body>
 </html>
